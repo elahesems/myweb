@@ -1,4 +1,4 @@
-#!/home/berkan/Desktop/myweb/myproject/venv/bin/python
+#!/home/berkan/Desktop/projeler/myweb/myproject/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

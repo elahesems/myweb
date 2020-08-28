@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="26">
+          <list size="29">
             <item index="0" class="java.lang.String" itemvalue="pkg-resources" />
             <item index="1" class="java.lang.String" itemvalue="python-dateutil" />
             <item index="2" class="java.lang.String" itemvalue="psycopg2" />
@@ -31,6 +31,9 @@
             <item index="23" class="java.lang.String" itemvalue="pytz" />
             <item index="24" class="java.lang.String" itemvalue="idna" />
             <item index="25" class="java.lang.String" itemvalue="Pillow" />
+            <item index="26" class="java.lang.String" itemvalue="lazy-object-proxy" />
+            <item index="27" class="java.lang.String" itemvalue="django-ipware" />
+            <item index="28" class="java.lang.String" itemvalue="django-crispy-forms" />
           </list>
         </value>
       </option>
