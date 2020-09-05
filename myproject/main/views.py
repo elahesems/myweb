@@ -7,7 +7,7 @@ from .models import Main
 
 def home(request):
 
-    site = Main.objects.get (pk=2)
+    site = Main.objects.get(pk=2)
     news= News.objects.all()
     context={'site': site, 'news':news}
     return render(request, 'home.html', context)
@@ -16,8 +16,13 @@ def home(request):
 def about(request):
 
 
-    site = Main.objects.get (pk=2)
+    site = Main.objects.get(pk=2)
 
     context={'site': site}
 
     return render(request, 'about.html', context)
+
+def panel(request):
+
+
+    return render(request, 'back/home.html')
