@@ -14,4 +14,8 @@ def news_detail(request,word):
 
 def news_list(request):
 
-    return render(request, 'back/news_list.html')
+    news = News.objects.all()
+
+    context = {'news':news}
+
+    return render(request, 'back/news_list.html',context)
