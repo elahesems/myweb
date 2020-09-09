@@ -19,3 +19,10 @@ def news_list(request):
     context = {'news':news}
 
     return render(request, 'back/news_list.html',context)
+
+
+
+
+def news_add(request):
+
+    return render(request, 'back/news_add.html')
