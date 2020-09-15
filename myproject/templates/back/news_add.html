@@ -6,7 +6,10 @@
     <div class="content-header">
         <div class="header-section">
             <h1>
-                <i class="fa fa-table"></i>Add News<br><small>you can add, edit and delete your data!</small>
+                <i class="fa fa-table"></i>Add News<br><small>you can add, edit and delete your data! now = {{ now|date:"d.m.Y" }}</small>
+                {% if error %}<br>
+                   <p style="color: red"> {{ error }}</p>
+                {% endif %}
             </h1>
         </div>
     </div>
@@ -38,10 +41,12 @@
 
                                                 <div class="col-md-6">
                                                     <select id="newscat" name="newscat" class="select-chosen" data-placeholder="Choose a Category.." style="width: 250px;">
-                                                        <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
-                                                        <option value="Cat1">Cat 1</option>
-                                                        <option value="Cat2">Cat 2</option>
-                                                        <option value="Cat3">Cat 3</option>
+                                                        <option >------</option>
+                                                        {% for x,y in form.fields.catname.choices %}
+
+
+                                                            <option value="{{ x }}">{{ y }}</option>
+                                                        {% endfor %}
 
                                                     </select>
                                                 </div>
@@ -68,7 +73,7 @@
 
                                         <div class="form-group">
                                             <div class="col-md-6">
-                                                <input type="file" id="myfile" name="myfile" rows="5" class="form-control" placeholder="Body txt">                                            </div>
+                                                <input type="file" id="myfile" name="myfile"  class="form-control" aria-placeholder="dosya seç">                                            </div>
 
                                         </div>
 
