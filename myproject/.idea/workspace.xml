@@ -20,18 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa708ce2-bca9-4932-a46c-29d6c578710e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/dateconverter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/back/news_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/news_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/back/news_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/news_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -65,7 +59,9 @@
   </component>
   <component name="JupyterTrust" id="14038953-6f78-4ccb-a852-d0f71e21315c" />
   <component name="ProjectId" id="1gwXgTwBu5WgL0VjQu54SXIspbM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -177,7 +173,7 @@
       <workItem from="1599898712217" duration="8861000" />
       <workItem from="1599980941272" duration="8794000" />
       <workItem from="1600074474897" duration="12730000" />
-      <workItem from="1600179885515" duration="3286000" />
+      <workItem from="1600179885515" duration="9130000" />
     </task>
     <servers />
   </component>
@@ -197,11 +193,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="512" y="176" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600106359016">
+    <state x="512" y="176" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600206601244">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="1852" y="154" width="424" height="484" key="FileChooserDialogImpl/1366.0.1366.768/0.27.1366.741@1366.0.1366.768" timestamp="1599057400610" />
     <state x="512" y="176" key="FileChooserDialogImpl/1366.0.1366.768/41.27.1325.741@41.27.1325.741" timestamp="1600106359016" />
+    <state x="512" y="176" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1600206601244" />
     <state width="1279" height="175" key="GridCell.Tab.0.bottom" timestamp="1600106740455">
       <screen x="41" y="27" width="1325" height="741" />
     </state>

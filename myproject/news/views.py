@@ -106,3 +106,68 @@ def news_delete(request,pk):
         error = "Somthing Wrong"
         return render(request,'back/error.html',{'error':error})
     return redirect('news_list')
+
+def news_edit(request,pk):
+    the_news = News.objects.get(id=pk)
+    form = NewsForm()
+    if request.method == "POST":
+
+        now = datetime.datetime.now()
+        newstitle = request.POST.get('newstitle')
+        newscat = request.POST.get('newscat')
+        newstxtshort = request.POST.get('newstxtshort')
+        newstxt = request.POST.get('newstxt')
+
+
+
+        if newstitle == "" or newstxtshort == "" or newstxt == "" or newscat == "":
+            error = "All Fields Requirded"
+            return render(request, 'back/edit.html', {'error': error, 'now': now, 'form': form})
+
+        try:
+
+            myfile = request.FILES['myfile']
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            url = fs.url(filename)
+
+            if str(myfile.content_type).startswith("image"):
+
+                if myfile.size < 5000000:
+
+                    the = News.objects.get(pk=pk)
+
+                    the.picurl=url
+
+                    the.picname=filename
+
+                    the.newstitle = newstitle
+                    the.newscat = newscat
+                    the.newstxtshort = newstxtshort
+                    the.newstxt = newstxt
+
+                    the.save()
+                    return redirect('news_list')
+
+                else:
+                    fs = FileSystemStorage()
+                    fs.delete(filename)
+
+                    error = "Your File Is Bigger Than 5 MB"
+                    return render(request, 'back/error.html', {'error': error})
+
+
+            else:
+                fs = FileSystemStorage()
+                fs.delete(filename)
+
+                error = "Your File Not Supported"
+                return render(request, 'back/error.html', {'error': error})
+
+        except:
+            error = "Please Input Your Image"
+            return render(request, 'back/error.html', {'error': error})
+
+    context={'news':the_news,'form':form,'pk':pk}
+    return render(request,'back/edit.html',context)
+
