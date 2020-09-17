@@ -19,10 +19,14 @@ def cat_add(request):
         if name == "":
             error = "Your File Not Supported"
             return render(request, 'back/error.html', {'error': error})
+
+        if len(Cat.objects.filter(name=name)) !=0:
+            error = "This Name Used Before"
+            return render(request, 'back/error.html', {'error': error})
+
         b = Cat(name=name)
         b.save()
         return redirect('cat_list')
-
 
 
     return render(request,'back/cat_add.html')

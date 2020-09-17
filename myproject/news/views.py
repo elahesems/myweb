@@ -1,12 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
+from cat.models import Cat
 from main.models import Main
 from news.forms import NewsForm
 from news.models import News
 from django.core.files.storage import FileSystemStorage
 import datetime
 
+
 #from main.dateconverter import
 # Create your views here.
+from subcat.models import SubCat
 
 
 def news_detail(request,word):
@@ -44,6 +48,7 @@ def news_add(request):
     today = str(year) + "/" + str(month) + "/" + str(day)
     time = str(now.hour) + ":" + str(now.minute)
 
+    cat = SubCat.objects.all()
 
 
     if request.method == 'POST':
@@ -51,6 +56,7 @@ def news_add(request):
         newscat = request.POST.get('newscat')
         newstxtshort = request.POST.get('newstxtshort')
         newstxt = request.POST.get('newstxt')
+        newsid = request.POST.get('newscat')
 
 
         if newstitle == "" or newstxtshort == "" or newstxt =="" or newscat == "":
@@ -69,7 +75,9 @@ def news_add(request):
 
                 if myfile.size < 5000000 :
 
-                    b = News(name=newstitle, short_txt=newstxtshort, body_txt=newstxt, date=now, picname=filename, picurl=url, writer="-", catname=newscat, catid=0, show=0, time=time)
+                    newsname = SubCat.objects.get(pk=newsid).name
+
+                    b = News(name=newstitle, short_txt=newstxtshort, body_txt=newstxt, date=now, picname=filename, picurl=url, writer="-", catname=newsname, catid=newsid, show=0, time=time)
                     b.save()
                     return redirect('news_list')
 
@@ -92,7 +100,7 @@ def news_add(request):
             error = "Please Input Your Image"
             return render(request, 'back/error.html', {'error': error})
 
-    context = {'now':now,'form':form}
+    context = {'now':now,'form':form,'cat':cat}
     return render(request, 'back/news_add.html',context)
 
 
@@ -108,21 +116,26 @@ def news_delete(request,pk):
     return redirect('news_list')
 
 def news_edit(request,pk):
-    the_news = News.objects.get(id=pk)
-    form = NewsForm()
-    if request.method == "POST":
 
-        now = datetime.datetime.now()
+    if len(News.objects.filter(pk=pk)) == 0 :
+        error = "News Not Found"
+        return render(request, 'back/error.html' , {'error':error})
+
+
+    news = News.objects.get(pk=pk)
+    cat = SubCat.objects.all()
+    if request.method == 'POST':
         newstitle = request.POST.get('newstitle')
         newscat = request.POST.get('newscat')
         newstxtshort = request.POST.get('newstxtshort')
         newstxt = request.POST.get('newstxt')
+        newsid = request.POST.get('newscat')
 
 
+        if newstitle == "" or newstxtshort == "" or newstxt =="" or newscat == "":
+            error= "All Fields Requirded"
+            return render(request,'back/news_add.html' ,{'error':error})
 
-        if newstitle == "" or newstxtshort == "" or newstxt == "" or newscat == "":
-            error = "All Fields Requirded"
-            return render(request, 'back/edit.html', {'error': error, 'now': now, 'form': form})
 
         try:
 
@@ -133,20 +146,22 @@ def news_edit(request,pk):
 
             if str(myfile.content_type).startswith("image"):
 
-                if myfile.size < 5000000:
+                if myfile.size < 5000000 :
 
-                    the = News.objects.get(pk=pk)
+                    newsname = SubCat.objects.get(pk=newsid).name
 
-                    the.picurl=url
+                    b = News.objects.get(pk=pk)
+                    fss = FileSystemStorage()
+                    fss.delete(b.picname)
 
-                    the.picname=filename
-
-                    the.newstitle = newstitle
-                    the.newscat = newscat
-                    the.newstxtshort = newstxtshort
-                    the.newstxt = newstxt
-
-                    the.save()
+                    b.name = newstitle
+                    b.short_txt = newstxtshort
+                    b.body_txt = newstxt
+                    b.picname = filename
+                    b.picurl = url
+                    b.catname = newsname
+                    b.catid = newsid
+                    b.save()
                     return redirect('news_list')
 
                 else:
@@ -165,9 +180,21 @@ def news_edit(request,pk):
                 return render(request, 'back/error.html', {'error': error})
 
         except:
-            error = "Please Input Your Image"
-            return render(request, 'back/error.html', {'error': error})
+            newsname = SubCat.objects.get(pk=newsid).name
 
-    context={'news':the_news,'form':form,'pk':pk}
-    return render(request,'back/edit.html',context)
+            b = News.objects.get(pk=pk)
+
+            b.name = newstitle
+            b.short_txt = newstxtshort
+            b.body_txt = newstxt
+            b.catname = newsname
+            b.catid = newsid
+            b.save()
+            return redirect('news_list')
+
+
+
+    context = {'pk':pk,'news':news,'cat':cat}
+
+    return render(request, 'back/news_edit.html', context)
 

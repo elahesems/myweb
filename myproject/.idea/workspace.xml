@@ -21,11 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="aa708ce2-bca9-4932-a46c-29d6c578710e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cat/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo_2020-05-08_16-09-59_j0WgyfT.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/back/news_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/news_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/back/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/news_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/back/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/back/news_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back/news_add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +75,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../myfiles/eduguide" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
@@ -174,6 +178,7 @@
       <workItem from="1599980941272" duration="8794000" />
       <workItem from="1600074474897" duration="12730000" />
       <workItem from="1600179885515" duration="9130000" />
+      <workItem from="1600263015955" duration="23663000" />
     </task>
     <servers />
   </component>
